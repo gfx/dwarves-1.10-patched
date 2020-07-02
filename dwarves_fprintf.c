@@ -437,18 +437,23 @@ static const char *__tag__name(const struct tag *self, const struct cu *cu,
 	}
 	case DW_TAG_volatile_type:
 	case DW_TAG_const_type:
+	case DW_TAG_restrict_type:
 		type = cu__type(cu, self->type);
 		if (type == NULL && self->type != 0)
 			tag__id_not_found_snprintf(bf, len, self->type);
 		else if (!tag__has_type_loop(self, type, bf, len, NULL)) {
 			char tmpbf[128];
-			const char *prefix = "const",
+			const char *prefix = "",
+				   *suffix = "",
 				   *type_str = __tag__name(type, cu, tmpbf,
 							   sizeof(tmpbf),
 							   pconf);
-			if (self->tag == DW_TAG_volatile_type)
-				prefix = "volatile";
-			snprintf(bf, len, "%s %s ", prefix, type_str);
+			switch (self->tag) {
+			case DW_TAG_volatile_type: prefix = "volatile "; break;
+			case DW_TAG_const_type:    prefix = "const ";	 break;
+			case DW_TAG_restrict_type: suffix = " restrict"; break;
+			}
+			snprintf(bf, len, "%s%s%s ", prefix, type_str, suffix);
 		}
 		break;
 	case DW_TAG_array_type:

@@ -1469,7 +1469,7 @@ static int die__process_function(Dwarf_Die *die, struct ftype *ftype,
 		case DW_TAG_template_type_parameter:
 		case DW_TAG_template_value_parameter:
 			/* FIXME: probably we'll have to attach this as a list of
- 			 * template parameters to use at class__fprintf time... 
+ 			 * template parameters to use at class__fprintf time...
  			 * See die__process_class */
 			tag__print_not_supported(dwarf_tag(die));
 			continue;
@@ -1554,6 +1554,7 @@ static struct tag *__die__process_tag(Dwarf_Die *die, struct cu *cu,
 	case DW_TAG_imported_module:
 	case DW_TAG_pointer_type:
 	case DW_TAG_reference_type:
+	case DW_TAG_restrict_type:
 	case DW_TAG_volatile_type:
 		tag = die__create_new_tag(die, cu);		break;
 	case DW_TAG_ptr_to_member_type:
