@@ -1,0 +1,81 @@
+dwarves-dfsg (1.10-2.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+
+  [ Robie Basak ]
+  * Fix FTBFS with newer elfutils. (Closes: #764484)
+
+ -- James Cowgill <jcowgill@debian.org>  Thu, 24 Mar 2016 13:01:08 +0000
+
+dwarves-dfsg (1.10-2) unstable; urgency=low
+
+  * Make sure CMake uses standard library location if host has no
+    MultiArch. Closes: #665054.
+
+ -- Thomas Girard <thomas.g.girard@free.fr>  Sat, 16 Jun 2012 10:50:15 +0200
+
+dwarves-dfsg (1.10-1) unstable; urgency=low
+
+  * New upstram release.
+  * Record patches using dpkg-source --commit. Closes: #643102.
+  * Use MultiArch elfutils location. Closes: #665054.
+  * debian/control: change homepage to new location.
+  * debian/watch: change source tarball location.
+  * debian/control: bump Standards-Version: to 3.9.3. No changes needed.
+  * debian/rules: add missing build-arch and build-indep targets.
+
+ -- Thomas Girard <thomas.g.girard@free.fr>  Fri, 08 Jun 2012 20:55:03 +0200
+
+dwarves-dfsg (1.9-1) unstable; urgency=low
+
+  * Acknowledge 1.3-1.1 NMU (thanks to Michael Banck) and resynch with
+    Ubuntu release (thanks Bhavani Shankar).
+  * New upstream release:
+    - patch from 1.3-1.1ubuntu1 no longer needed.
+    - new manpage for pahole.
+    - new program scncopy to copy ELF sections.
+    - fixes crash when encountering a pointer in a struct. Closes: #513573.
+    - recognizes C++ classes. Closes: #621530.
+    - no longer FTBFS with gcc 4.6. Closes: #625158.
+  * Remove libebl detection and use. Closes: #534529.
+  * debian/control:
+    - bump debhelper level to 7.
+    - add Vcs-Git: and Vcs-Browser:
+    - bump Standards-Version: to 3.9.2.
+    - add zlib1g-dev build dependency.
+  * debian/copyright: add missing copyright holders.
+  * debian/rules:
+    - allow to be compiled twice in a row.
+    - ensure package building aborts if a program is not installed.
+    - use dh_prep instead of dh_clean -k.
+  * debian/dwarves.install:
+    - include syscse. Closes: #517180.
+    - add ctracer. See README.ctracer for information on how to use it.
+  * Switch to dpkg-source 3.0 (quilt) format.
+  * Fix many lintian warnings.
+
+ -- Thomas Girard <thomas.g.girard@free.fr>  Mon, 02 May 2011 19:34:31 +0200
+
+dwarves-dfsg (1.3-1.1ubuntu1) maverick; urgency=low
+
+  * dwarwes-dfsg-1.3/src/dwarves.c:
+    + Add missing headers to fix undefined reference to `S_IS*' linker 
+      error with gcc 4.5 LP: #602367
+
+ -- Bhavani Shankar <bhavi@ubuntu.com>  Tue, 06 Jul 2010 22:20:38 +0530
+
+dwarves-dfsg (1.3-1.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Applied patch by Peter Green (Closes: #534084)
+    + cmake/modules/FindDWARF.cmake: Removed libebl support.
+    + debian/control (Build-Depends): Removed libebl-dev. 
+
+ -- Michael Banck <mbanck@debian.org>  Sun, 29 Nov 2009 12:45:58 +0100
+
+dwarves-dfsg (1.3-1) unstable; urgency=low
+
+  * Initial release, based on Domenico Andreoli <cavok@debian.org> work.
+    Closes: #436522.
+
+ -- Thomas Girard <thomas.g.girard@free.fr>  Mon, 24 Dec 2007 10:14:17 +0100

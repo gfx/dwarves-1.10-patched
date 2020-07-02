@@ -1,0 +1,24 @@
+This package was debianized by Domenico Andreoli <cavok@debian.org> on
+Wed, 08 Aug 2007 04:02:11 +0200.
+
+It was downloaded from http://fedorapeople.org/~acme/dwarves
+
+Upstream Author:
+
+    Arnaldo Carvalho de Melo <acme@redhat.com>
+
+Copyright:
+
+    Copyright (C) 2005-2009 Arnaldo Carvalho de Melo
+    Copyright (C) 2006 Mandriva Conectiva S.A.
+    Copyright (C) 2008 David S. Miller <davem@davemloft.net>
+    Copyright (C) 2007-2009 Red Hat Inc.
+    Copyright (C) 2007 Davi E. M. Arnaut <davi@haxent.com.br>
+
+License:
+
+    GNU General Public License, version 2, found in
+    /usr/share/common-licenses/GPL-2 on Debian systems.
+
+The Debian packaging is Copyright (C) 2007, Domenico Andreoli <cavok@debian.org>
+and is licensed under the GPL, see `/usr/share/common-licenses/GPL'.
